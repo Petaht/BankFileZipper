@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.IO.Compression;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,8 +16,8 @@ namespace FileBackupZipper
         {
             InitializeComponent();
 
-            label3.Text = Properties.Settings.Default["BankFilePath"].ToString();
-            label4.Text = Properties.Settings.Default["OutputFolder"].ToString();
+           // label3.Text = Properties.Settings.Default["BankFilePath"].ToString();
+           // label4.Text = Properties.Settings.Default["OutputFolder"].ToString();
             label7.Text = (Properties.Settings.Default.LastBackupDate != default(DateTime)) ? Properties.Settings.Default.LastBackupDate.ToString("yyyy-MM-dd HH:mm") : "Never";
 
             pictureBox1.BackColor = System.Drawing.Color.Red;
@@ -79,6 +80,13 @@ namespace FileBackupZipper
 
         private void ZipIt(string startPath, string outputPath)
         {
+             if(!Directory.Exists(startPath) ||
+                !Directory.Exists(outputPath)
+             ){
+                MessageBox.Show(String.Format("BankfileLocation folder and/or Output folder are not set"), "Error");
+                return;
+            }
+
             try
             {
                 ZipFile.CreateFromDirectory(startPath, outputPath, CompressionLevel.Fastest, true);
