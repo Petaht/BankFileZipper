@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FileBackupZipper.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BankFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Empty</Value>
+    </Setting>
+    <Setting Name="OutputFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Empty</Value>
+    </Setting>
+    <Setting Name="LastBackupDate" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>
